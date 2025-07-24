@@ -6,14 +6,12 @@ def Print_Clients(CLIENTS):
         print(f"Lugares visitados:")
         for a in dat["Lugares visitados"].keys():
             print(a)
-def Count_Visits(CLIENTS):
-    totvalue=0
-    for code, dat in CLIENTS.items():
-        cont=0
-        for a in dat["Lugares visitados"].keys():
-            cont=cont+1
-        totvalue=totvalue+cont
-    return(totvalue)
+def Count_Visits(CLIENTS,clientcont):
+
+    dat=CLIENTS[clientcont]
+    for a in dat["Lugares visitados"].keys():
+        cont=cont+1
+    return cont,Count_Visits(CLIENTS,cont-1)
 
 CLIENTS={}
 CLIENT_CONT=int(input("Ingrese el numero de clientes a registrar:"))
@@ -44,4 +42,4 @@ elif CLIENT_CONT < 1:
     print("Valor Invalido: Debe ser como minimo 1")
 
 Print_Clients(CLIENTS)
-print(Count_Visits(CLIENTS))
+print(f"{Count_Visits(CLIENTS,CLIENT_CONT)}")
