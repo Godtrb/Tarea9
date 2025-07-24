@@ -11,7 +11,7 @@ def Count_Visits(CLIENTS,clientcont):
     dat=CLIENTS[clientcont]
     for a in dat["Lugares visitados"].keys():
         cont=cont+1
-    return cont,Count_Visits(CLIENTS,cont-1)
+    return cont,Count_Visits(CLIENTS,clientcont-1)
 
 CLIENTS={}
 CLIENT_CONT=int(input("Ingrese el numero de clientes a registrar:"))
@@ -42,4 +42,4 @@ elif CLIENT_CONT < 1:
     print("Valor Invalido: Debe ser como minimo 1")
 
 Print_Clients(CLIENTS)
-print(f"{Count_Visits(CLIENTS,CLIENT_CONT)}")
+VisitTot=Count_Visits(CLIENTS,CLIENT_CONT)
