@@ -2,11 +2,13 @@ def Print_Clients(CLIENTS):
     cont=0
     for code, dat in CLIENTS.items() :
         cont=cont+1
-
-        print(f"{cont})Cliente: {code}")
+        print(f"{cont}) Cliente: {code}")
         print(f"Lugares visitados:")
         for a in dat["Lugares visitados"].keys():
             print(a)
+def Count_Visits(CLIENTS):
+    for code, dat in CLIENTS.items():
+
 
 CLIENTS={}
 CLIENT_CONT=int(input("Ingrese el numero de clientes a registrar:"))
